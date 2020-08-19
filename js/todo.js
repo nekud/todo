@@ -67,7 +67,7 @@ var taskItem = {
         var edit = task.children('button[name="Edit"]');
         var save = addElement.button('Save', 'taskItem.save(this)');
         
-        //alert(spandate.val());
+        //alert(spandate.text());
         var input = $('<input>');
         input.val(task.data('name'));
         input.attr('name', 'Edit');
@@ -219,7 +219,7 @@ var taskItem = {
     
 };
 
-// This object allows you to create consistent, functional HTML elements in the DOM without having to re-write code.
+// creating elements for the page
 
 var addElement = {
     checkbox: function(onchange) {
