@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8">    
+  </head>
+  <body>
+    <div id="myDIV" class="header">
+        <h2 style="margin:5px">To Do List</h2>
+    </div>
+    <div class="container">
+      <p>
+        <label for="txtNewTask">New Task</label><input id="txtNewTask" type="text">
+        <label for="calendar">Due Date</label><input type="date" id="calendar">
+        <button id="add">Add</button>
+      </p>
+      
+      <h3>To-Do</h3>
+    <ul id="incomplete-tasks">
+      </ul>
+      
+      <h3>Completed</h3>
+    <ul id="completed-tasks">
+      </ul>
+    </div>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/todo.js"></script>
+    
+
+  </body>
+</html>
