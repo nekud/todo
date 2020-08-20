@@ -66,7 +66,8 @@ var taskItem = {
         var spandate = task.children('span[name="Duedate"]');
         var edit = task.children('button[name="Edit"]');
         var save = addElement.button('Save', 'taskItem.save(this)');
-        
+        var dlt = task.children('button[name="Delete"]');
+        var cancel = addElement.button('Cancel', 'taskItem.cancel(this)');
         //alert(spandate.text());
         var input = $('<input>');
         input.val(task.data('name'));
@@ -79,6 +80,7 @@ var taskItem = {
         span.replaceWith(input);
         spandate.replaceWith(inputDate);
         edit.replaceWith(save);
+        dlt.replaceWith(cancel);
     },
     
     save: function(button) {
@@ -111,6 +113,21 @@ var taskItem = {
         var taskid = task.children('span[name="taskid"]');
         taskItem.DeleteTask(taskid.text());
         task.remove();
+    },
+    cancel: function(button) {
+        var task = $(button).parents('li[name="Task"]');
+        var input = task.children('input[name="Edit"]');
+        var inputDate = task.children('input[name="EditedDate"]');
+        var cancel = task.children('button[name="Cancel"]');
+        var save = task.children('button[name="Save"]');
+        var span = addElement.span(task.data('name'));
+        var spandate = addElement.spandate(task.data('duedate'));
+        var edit = addElement.button('Edit', 'taskItem.edit(this)');
+        var dlt = addElement.button('Delete', 'taskItem.delete(this)');
+        inputDate.replaceWith(spandate);
+        input.replaceWith(span);
+        save.replaceWith(edit);
+        cancel.replaceWith(dlt);
     },
     GetTaskItems: function () {
         var keyIdHighlight = 0;
